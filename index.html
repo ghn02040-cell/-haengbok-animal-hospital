@@ -565,7 +565,7 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
 
 <!-- 글 상세보기 모달 -->
 <div class="overlay" id="m-post">
-  <div class="modal" style="max-width:600px;max-height:85vh;overflow-y:auto;">
+  <div class="modal" style="max-width:auto !important; max-height: 80vh !important;;max-height:85vh;overflow-y:auto;">
     <button class="modal-x" onclick="closeM('post')">×</button>
     <div id="post-cat" style="margin-bottom:10px;"></div>
     <h2 id="post-title" style="font-size:20px;margin-bottom:8px;line-height:1.4;"></h2>
@@ -1081,7 +1081,7 @@ function kakaoLogin() {
           const authDiv = document.querySelector('.nav-auth');
           authDiv.innerHTML = `
             <div style="display:flex;align-items:center;gap:8px;">
-              ${img ? `<img src="${img}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;">` : ''}
+              ${img ? `<img src="${img}" style="width:28px;height:28px;border-radius:50%;object-fit:contain;">` : ''}
               <span style="font-size:13px;font-weight:600;color:var(--sage);">${nick}님</span>
               <button class="btn-ghost" onclick="kakaoLogout()" style="font-size:12px;">로그아웃</button>
             </div>`;
