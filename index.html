@@ -247,6 +247,7 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
 .fbot{padding-top:22px;font-size:12px;color:rgba(255,255,255,.35);display:flex;justify-content:space-between;}.hero 
   { height: 350px !important; overflow: hidden; background-size:contain !important; background-repeat:no-repeat !important; background-position:top center !important; background-repeat:no-repeat !important; background-position:top center !important; background-repeat:no-repeat !important; background-position:top center !important; background-position: center center !important; }
 </style>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -263,7 +264,7 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
       <li><a id="n-contact" onclick="go('contact')">연락처</a></li>
     </ul>
     <div class="nav-auth">
-      <button class="btn-ghost" onclick="openM('login')">로그인</button>
+      <button class="btn-ghost" onclick="kakaoLogin()">로그인</button>
       <button class="btn-fill" onclick="openM('signup')">회원가입</button>
     </div>
   </div>
@@ -1101,13 +1102,22 @@ function kakaoLogout() {
   Kakao.Auth.logout(() => {
     const authDiv = document.querySelector('.nav-auth');
     authDiv.innerHTML = `
-      <button class="btn-ghost" onclick="openM('login')">로그인</button>
+      <button class="btn-ghost" onclick="kakaoLogin()">로그인</button>
       <button class="btn-fill" onclick="openM('signup')">회원가입</button>`;
   });
 }
 
 // 엔터키로 댓글 등록
 renderBoard();
+</script>
+
+<script>
+  Kakao.init('8267fd6ee5c3f14fb39685a30d7436e0');
+  function kakaoLogin() {
+    Kakao.Auth.authorize({
+      redirectUri: 'https://ghn02040-cell.github.io/-haengbok-animal-hospital/'
+    });
+  }
 </script>
 </body>
 </html>
