@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>행복 동물병원</title>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 <style>
 :root{
   --sage:#4a7c59;--sage-light:#e8f0eb;--sage-mid:#7aab8a;
@@ -247,7 +246,6 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
 .fbot{padding-top:22px;font-size:12px;color:rgba(255,255,255,.35);display:flex;justify-content:space-between;}.hero 
   { height: 350px !important; overflow: hidden; background-size:contain !important; background-repeat:no-repeat !important; background-position:top center !important; background-repeat:no-repeat !important; background-position:top center !important; background-repeat:no-repeat !important; background-position:top center !important; background-position: center center !important; }
 </style>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 </head>
 <body>
 
@@ -1117,14 +1115,10 @@ renderBoard();
 <script>
   Kakao.init('8267fd6ee5c3f14fb39685a30d7436e0');
   function kakaoLogin() {
-    Kakao.Auth.login({
-      success: function(authObj) {
-        Kakao.API.request({
-          url: '/v2/user/me',
-          success: function(res) {
-            var nickname = res.kakao_account.profile.nickname;
-            alert(nickname + '님 환영합니다!');
-          }
+    var clientId = '8267fd6ee5c3f14fb39685a30d7436e0';
+    var redirectUri = encodeURIComponent('https://ghn02040-cell.github.io/-haengbok-animal-hospital/');
+    window.location.href = 'https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=' + clientId + '&redirect_uri=' + redirectUri;
+  }
         });
       },
       fail: function(err) {
