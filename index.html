@@ -1069,7 +1069,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function kakaoLogin() {
-  if (typeof Kakao === 'undefined') { alert('카카오 SDK를 불러오지 못했습니다.'); return; }
+    var clientId = '8267fd6ee5c3f14fb39685a30d7436e0';
+    var redirectUri = encodeURIComponent('https://ghn02040-cell.github.io/-haengbok-animal-hospital/');
+    window.location.href = 'https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=' + clientId + '&redirect_uri=' + redirectUri;
+  }
   Kakao.Auth.login({
     success: function(authObj) {
       Kakao.API.request({
