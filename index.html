@@ -43,13 +43,13 @@ nav{background:var(--white);border-bottom:1px solid var(--border);position:stick
 .wrap-sm{max-width:720px;margin:0 auto;padding:64px 24px;}
 
 /* ── HOME ── */
-.hero{background:url("hero-bg.png") center/cover no-repeat;border-bottom:1px solid var(--border);position:relative;width:100%;min-height:500px;overflow:hidden;}
-.hero-inner{max-width:1100px;width:100%;margin:0 auto;padding:60px 24px 160px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;box-sizing:border-box;}
+.hero{background:url("hero-bg.png?v=99") center/cover no-repeat;border-bottom:1px solid var(--border);position:relative;width:100%;min-height:420px;overflow:hidden;}
+.hero-inner{max-width:1100px;margin:0 auto;padding:60px 24px 60px;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1;}
 .eyebrow{display:inline-block;background:var(--sage-light);color:var(--sage);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:20px;font-weight:500;}
 .hero h1{font-family:var(--font-d);font-size:46px;line-height:1.18;letter-spacing:-1px;margin-bottom:20px;color:#ffffff;text-shadow:0 2px 8px rgba(0,0,0,0.35);}
 .hero h1 em{color:#b8f0cc;font-style:normal;}
-.hero-text-col{padding-left:48px;} .hero-left-col{flex:1;max-width:50%;} .hero-sub{color:rgba(255,255,255,0.92);font-size:16px;max-width:420px;margin-bottom:36px;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,0.3);}
-.hero-vis{background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.8);border-radius:20px;min-width:160px;height:160px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:40px;}
+.hero-sub{color:rgba(255,255,255,0.92);font-size:16px;max-width:420px;margin-bottom:36px;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,0.3);}
+.hero-vis{background:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.8);border-radius:20px;height:320px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
 .paw-bg{font-size:160px;opacity:.1;position:absolute;top:-10px;right:-10px;line-height:1;}
 .hero-badge{background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;padding:16px 20px;text-align:center;z-index:1;min-width:150px;cursor:pointer;transition:transform .15s,box-shadow .15s;}
 .hero-badge:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(74,124,89,0.25);}
@@ -283,58 +283,13 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
         <div class="hero-badge" onclick="openM('booking')" title="진료 예약하기"><strong>24/7</strong><span>응급 진료 🗓️</span></div>
       </div>
     </div>
+    <div class="stats-bar" style="position:relative;z-index:1;background:rgba(255,255,255,0.95);">
+      <div class="stat"><div class="stat-n">4,200+</div><div class="stat-l">누적 진료 건</div></div>
       <div class="stat"><div class="stat-n">12년</div><div class="stat-l">운영 경력</div></div>
       <div class="stat"><div class="stat-n">6명</div><div class="stat-l">전문 수의사</div></div>
       <div class="stat"><div class="stat-n">98%</div><div class="stat-l">고객 만족도</div></div>
     </div>
   </div>
-  
-  <div class="stats-bar" style="position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,0.88);z-index:2;">
-<div class="stat"><div class="stat-n">4,200+</div><div class="stat-l">누적 진료 건</div></div>
-
-  <div class="wrap">
-    <div class="section-tag">주요 서비스</div>
-    <h2 class="sec-title">반려동물을 위한 전문 의료</h2>
-    <p class="sec-sub">첨단 의료 장비와 숙련된 수의사로 최고의 진료를 제공합니다.</p>
-    <div class="card-grid">
-      <div class="card"><div class="c-icon">🩺</div><h3>일반 진료</h3><p>건강검진, 예방접종, 내과·외과 등 전반적인 기본 진료를 제공합니다.</p></div>
-      <div class="card"><div class="c-icon">🚑</div><h3>응급 진료</h3><p>24시간 응급 진료 시스템으로 위급한 상황에서도 빠르게 대응합니다.</p></div>
-      <div class="card"><div class="c-icon">🔬</div><h3>정밀 검사</h3><p>혈액 검사, 초음파, X-ray 등 최신 장비로 정확한 진단을 내립니다.</p></div>
-      <div class="card"><div class="c-icon">✂️</div><h3>외과 수술</h3><p>중성화 수술부터 복잡한 외과 수술까지 안전하게 진행합니다.</p></div>
-      <div class="card"><div class="c-icon">🦷</div><h3>치과 진료</h3><p>스케일링, 발치, 치주 치료 등 구강 건강을 전문으로 관리합니다.</p></div>
-      <div class="card"><div class="c-icon">🛁</div><h3>미용 & 케어</h3><p>목욕, 미용, 네일케어 등 반려동물의 외모와 위생을 관리합니다.</p></div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <div class="wrap">
-    <div class="section-tag">고객 후기</div>
-    <h2 class="sec-title">보호자분들의 이야기</h2>
-    <p class="sec-sub">행복 동물병원을 경험한 실제 보호자분들의 후기입니다.</p>
-    <div class="review-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"우리 강아지가 갑자기 밥을 안 먹어서 너무 걱정됐는데, 선생님께서 꼼꼼히 진찰해 주시고 원인을 바로 찾아주셨어요. 설명도 너무 친절하게 해주셔서 정말 감동받았습니다."</p>
-        <div class="reviewer"><div class="r-avatar">🐕</div><div><strong>김지현</strong><span>말티즈 보호자</span></div></div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"고양이 중성화 수술을 여기서 했는데 수술 전후 케어가 정말 꼼꼼했어요. 회복도 너무 빠르고 간호사 선생님들도 하나하나 챙겨주셔서 든든했습니다."</p>
-        <div class="reviewer"><div class="r-avatar">🐱</div><div><strong>박민서</strong><span>고양이 보호자</span></div></div>
-      </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p>"다른 병원에서 해결 못 했던 피부 문제를 행복 동물병원에서 해결했어요. 알러지 검사부터 체계적으로 진행해 주셔서 이제 반려견이 너무 편안해 보입니다."</p>
-        <div class="reviewer"><div class="r-avatar">🐩</div><div><strong>이수진</strong><span>푸들 보호자</span></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </div>
-  <div class="stats-bar" style="position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,0.88);z-index:2;">
-<div class="stat"><div class="stat-n">4,200+</div><div class="stat-l">누적 진료 건</div></div>
 
   <div class="wrap">
     <div class="section-tag">주요 서비스</div>
