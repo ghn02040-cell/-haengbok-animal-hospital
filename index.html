@@ -1068,31 +1068,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function kakaoLogin() {
-  if (typeof Kakao === 'undefined') { alert('카카오 SDK를 불러오지 못했습니다.'); return; }
-  Kakao.Auth.login({
-    success: function(authObj) {
-      Kakao.API.request({
-        url: '/v2/user/me',
-        success: function(res) {
-          const nick = res.kakao_account?.profile?.nickname || '고객';
-          const img  = res.kakao_account?.profile?.thumbnail_image_url || '';
-          closeM('login');
-          // 네비게이션 버튼을 로그인 상태로 교체
-          const authDiv = document.querySelector('.nav-auth');
-          authDiv.innerHTML = `
-            <div style="display:flex;align-items:center;gap:8px;">
-              ${img ? `<img src="${img}" style="width:28px;height:28px;border-radius:50%;object-fit:contain;">` : ''}
-              <span style="font-size:13px;font-weight:600;color:var(--sage);">${nick}님</span>
-              <button class="btn-ghost" onclick="kakaoLogout()" style="font-size:12px;">로그아웃</button>
-            </div>`;
-        },
-        fail: function(err) { console.error(err); }
-      });
-    },
-    fail: function(err) {
-      console.error(err);
-      alert('카카오 로그인에 실패했습니다.\n카카오 개발자 콘솔에서 현재 도메인을 Redirect URI / 플랫폼에 등록해 주세요.');
-    }
+  Kakao.Auth.authorize({
+    redirectUri: 'https://ghn02040-cell.github.io/-haengbok-animal-hospital/'
   });
 }
 
