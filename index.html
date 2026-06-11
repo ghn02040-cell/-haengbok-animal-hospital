@@ -1114,8 +1114,19 @@ renderBoard();
 <script>
   Kakao.init('8267fd6ee5c3f14fb39685a30d7436e0');
   function kakaoLogin() {
-    Kakao.Auth.authorize({
-      redirectUri: 'https://ghn02040-cell.github.io/-haengbok-animal-hospital/'
+    Kakao.Auth.login({
+      success: function(authObj) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function(res) {
+            var nickname = res.kakao_account.profile.nickname;
+            alert(nickname + '님 환영합니다!');
+          }
+        });
+      },
+      fail: function(err) {
+        alert('로그인 실패: ' + JSON.stringify(err));
+      }
     });
   }
 </script>
