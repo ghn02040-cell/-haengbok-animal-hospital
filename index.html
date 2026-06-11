@@ -262,7 +262,7 @@ footer{background:var(--ink);color:var(--white);padding:48px 24px 32px;margin-to
       <li><a id="n-contact" onclick="go('contact')">연락처</a></li>
     </ul>
     <div class="nav-auth">
-      <button class="btn-ghost" onclick="kakaoLogin()">로그인</button>
+      <button class="btn-ghost" onclick="openM('login')">로그인</button>
       <button class="btn-fill" onclick="openM('signup')">회원가입</button>
     </div>
   </div>
@@ -1103,7 +1103,7 @@ function kakaoLogout() {
   Kakao.Auth.logout(() => {
     const authDiv = document.querySelector('.nav-auth');
     authDiv.innerHTML = `
-      <button class="btn-ghost" onclick="kakaoLogin()">로그인</button>
+      <button class="btn-ghost" onclick="openM('login')">로그인</button>
       <button class="btn-fill" onclick="openM('signup')">회원가입</button>`;
   });
 }
